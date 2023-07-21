@@ -1,0 +1,28 @@
+<h1>Results</h1>
+
+<% if @foods.present? %>
+  <p>Total Results: <%= @num_results %></p>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>GTIN/UPC</th>
+        <th>Description</th>
+        <th>Brand Owner</th>
+        <th>Ingredients</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @foods.each do |food| %>
+        <tr>
+          <td><%= food.gtinupc %></td>
+          <td><%= food.description %></td>
+          <td><%= food.brand_owner %></td>
+          <td><%= food.ingredients %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>No Results Found</p>
+<% end %>
