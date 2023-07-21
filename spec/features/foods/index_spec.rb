@@ -49,5 +49,14 @@ RSpec.describe 'Foods Index Page' do
       expect(page).to have_content('SWEET POTATOES.')
       expect(page).to have_content('ORGANIC SWEET POTATOES.')
     end
+
+    it 'displays no results if no results are returned' do
+      visit root_path
+
+      fill_in :q, with: 'asdfggdssdsd'
+      click_button 'Search'
+
+      expect(page).to have_content('No Results Found')
+    end
   end
 end
