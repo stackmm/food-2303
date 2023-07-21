@@ -6,10 +6,4 @@ class FoodFacade
       Food.new(food_data)
     end
   end
-
-  def self.food_details(food_id)
-    json = FoodService.get_food_details(food_id)
-    
-    Food.new(json)
-  end
 end

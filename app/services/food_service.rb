@@ -13,8 +13,4 @@ class FoodService
   def self.get_food(food)
     get_url("/fdc/v1/foods/search?query=#{food}")
   end
-
-  def self.get_food_details(food_id)
-    get_url("/fdc/v1/food/#{food_id}")
-  end
 end
