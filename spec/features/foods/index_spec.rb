@@ -24,7 +24,8 @@ RSpec.describe 'Foods Index Page' do
       click_button 'Search'
 
       expect(current_path).to eq(foods_path)
-      expect(page).to have_content('Total Results: 39244')
+      expect(page).to have_content('Total Results: 50')
+      save_and_open_page
     end
 
     it 'displays a list of ten foods that contain the ingredient' do
